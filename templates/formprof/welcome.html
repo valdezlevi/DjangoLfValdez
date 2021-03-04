@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Welcome Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <h2>All Submitted Forms:</h2>
+    {% if access_listahan %}
+    <ol>
+        {% for access in access_listahan %}
+        <b>
+        <li>Submitted Info</li>
+        </b>
+        <ul>
+            <li>Full Name: {{access.name}}</li>
+            <li>Email Address: {{access.email}}</li>
+            <li>Verify Email: {{access.verify_email}}</li>
+            <li>TextBox: {{access.text}}</li>
+            <!-- <li>Password: {{person.pass_word}}</li> -->
+        </ul>
+        {% endfor %} {% endif %}
+    </ol>
+
+</body>
+
+</html>

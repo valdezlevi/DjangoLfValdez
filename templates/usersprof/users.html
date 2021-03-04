@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Users Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href={% static "css/mystyle.css" %} rel="stylesheet">
+</head>
+
+<body>
+    <h1>Welcome!</h1>
+    <h2>Here are your Users:</h2>
+    {% if users_listahan %}
+    <ol>
+        {% for person in users_listahan %}
+        <b>
+        <li>Users Info</li>
+        </b>
+        <ul>
+            <li>First Name: {{person.first_name}}</li>
+            <li>Last Name: {{person.last_name}}</li>
+            <li>Email Address: {{person.email_add}}</li>
+            <!-- <li>Password: {{person.pass_word}}</li> -->
+        </ul>
+        {% endfor %} {% endif %}
+    </ol>
+
+</body>
+
+</html>
